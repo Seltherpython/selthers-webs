@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banana Mail</title>
+    <link rel="stylesheet" href="banana-admin.css">
+</head>
+<body>
+   
+    <div class="container">
+        <form class="form" id="login">
+            <h1 class="form__title">Login</h1> 
+            <div class="form__message form__message--error" id="login-error" style="display: none;"></div>
+            
+            <div class="form__input-group">
+                <input type="text" class="form__input" id="username" autofocus placeholder="Username or email">
+                <div class="form__input-error-message">This is an error message</div>
+            </div>
+
+            <div class="form__input-group">
+                <input type="password" class="form__input" id="password" autofocus placeholder="Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <p class="form__text">
+                <a class="form__link" href="bananamail_sign-in.html" id="#">Not an admin? use a normal account</a>
+            </p>
+
+            <button class="form__button" type="submit">Continue</button>
+        </form>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const loginForm = document.getElementById("login");
+            const loginError = document.getElementById("login-error");
+
+            loginForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const username = document.getElementById("username").value;
+                const password = document.getElementById("password").value;
+
+                if (username === "Banana" && password === "ImTheBanana") {
+                    window.location.href = "anotherfile.html"; // Redirect to another file
+                } else {
+                    loginError.style.display = "block"; // Show error message
+                }
+            });
+        });
+    </script>
+    </p>
+</body>
+</html>
